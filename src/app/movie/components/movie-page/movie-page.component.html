@@ -1,0 +1,133 @@
+<div class="container">
+  <div fxLayout="  wrap" class="firstRow" fxLayoutGap="3%" fxLayoutAlign="center start">
+    <div class="imageContainer" fxLayout="column" fxLayoutAlign="center center">
+      <img src="{{imagesPath}}{{movieDescription.poster_path}}" class="poster"
+        onerror="this.src='/assets/images/noImage.jpg';" alt="movie description poster">
+    </div>
+    <div fxLayout="column" class="centerCol">
+      <app-movie-description [overview]="movieDescription.overview" [title]="movieDescription.title">
+      </app-movie-description>
+      <h3>Social</h3>
+      <div fxLayout="row" class="rating">
+        <div *ngFor="let star of rating">
+          <mat-icon *ngIf="star">star_rate</mat-icon>
+          <mat-icon *ngIf="!star">star_border</mat-icon>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column" class="rightCol" fxLayoutGap="5%">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d62216.75944509767!2d77.5234913215693!3d12.936781119009453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgoplan+mall!5e0!3m2!1sen!2sin!4v1544424546453"
+        width="320px" alt="google map"></iframe>
+      <!-- <div fxLayout="row wrap" class="options" fxLayoutGap="10%" fxLayoutAlign="center center">
+        <button mat-mini-fab>
+          <mat-icon>star_rate</mat-icon>
+        </button>
+        <button mat-mini-fab>
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-mini-fab>
+          <mat-icon>bookmark_border</mat-icon>
+        </button>
+      </div> -->
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <app-movie-booking>
+          <div class="theater-picker">
+            <mat-form-field class="datePicker">
+              <input matInput [matDatepicker]="picker1" placeholder="Select Date" [min]="minDate" [formControl]="date">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field class="select-theater">
+              <mat-select required [formControl]="selectTheater">
+                <mat-option *ngFor="let theater of theaterList" [value]="theater">
+                  {{theater.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div fxLayout="row wrap" *ngIf="theaterList && theaterList.length !== 0" fxLayoutAlign="center center"
+              fxLayoutGap="3%">
+
+              <!-- <button mat-button *ngFor="let time of selectedTheater.shows ">{{time}}</button> -->
+              <button mat-raised-button color="primary" (click)="checKToDialog()" style="color: white"
+                [disabled]="isInvalid()">
+                {{ category === 'nowPlaying' ? 'BOOK' : 'PRE-BOOK' }}</button>
+            </div>
+          </div>
+        </app-movie-booking>
+      </div>
+    </div>
+
+    <div class="secondRow" fxLayout="column wrap" fxLayoutAlign="center center">
+      <h3>Featured Cast & Crew</h3>
+      <div class="people" fxLayout="row wrap" fxLayoutGap="3%" fxLayoutAlign="center center">
+        <div *ngFor="let cast of movieDescription.casts | slice:0:2;trackBy:trackCastandCrew">
+          <mat-card>
+            <img src="{{castCrew}}{{cast.profile_path}}" title="{{cast.name}} / {{cast.job}}"
+              onerror="this.src='/assets/images/noImage.jpg'" alt="cast profile photo">
+            <mat-card-content>
+              <p>
+                {{cast.name}}
+              </p>
+              <p>
+                {{cast.character}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div *ngFor="let crew of movieDescription.crews | slice:0:2;trackBy:trackCastandCrew">
+          <mat-card>
+            <img src="{{castCrew}}{{crew.profile_path}}" title="{{crew.name}} / {{crew.job}}"
+              onerror="this.src='/assets/images/noImage.jpg'" alt="crew profile photo">
+            <mat-card-content>
+              <p>
+                {{crew.name}}
+              </p>
+              <p class="role">
+                {{crew.department}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+    <div class="secondRow" fxLayout="column wrap" fxLayoutAlign="center center">
+      <h3>Cast</h3>
+      <div class="people" fxLayout="row wrap" fxLayoutGap="1%" fxLayoutAlign="center center">
+        <div *ngFor="let cast of movieDescription.casts;trackBy:trackCastandCrew">
+          <mat-card>
+            <img src="{{castCrew}}{{cast.profile_path}}" title="{{cast.name}} / {{cast.job}}"
+              onerror="this.src='/assets/images/noImage.jpg'" alt="cast profile photo">
+            <mat-card-content>
+              <p>
+                {{cast.name}}
+              </p>
+              <p>
+                {{cast.character}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+    <div class="thirdRow" fxLayout="column wrap" fxLayoutAlign="center center">
+      <h3>Crew</h3>
+      <div class="people" fxLayout="row wrap" fxLayoutGap="1%" fxLayoutAlign="center center">
+        <div *ngFor="let crew of movieDescription.crews ;trackBy:trackCastandCrew">
+          <mat-card>
+            <img src="{{castCrew}}{{crew.profile_path}}" title="{{crew.name}} / {{crew.job}}"
+              onerror="this.src='/assets/images/noImage.jpg'" alt="crew profile photo">
+            <mat-card-content>
+              <p>
+                {{crew.name}}
+              </p>
+              <p>
+                {{crew.department}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

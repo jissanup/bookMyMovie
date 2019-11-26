@@ -1,0 +1,39 @@
+<!-- <div class='styler'> -->
+<mat-dialog-content>
+  <div class="search-box" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="0.5%">
+    <!-- routerLink="/home" -->
+    <button mat-button [mat-dialog-close]="true" routerLink="/home"><i class="material-icons">close</i></button>
+    <mat-form-field class="Sdialog">
+      <input matInput type="text" placeholder="Search your movie..." [formControl]="searchField">
+
+    </mat-form-field>
+  </div>
+
+  <div class="dialog-dropdown" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="1%">
+    <mat-form-field>
+      <select [(ngModel)]="selectedLanguage" matNativeControl placeholder="Language">
+        <option *ngFor='let language of movieObjArray' value="{{language.code}}"> {{language.key}}</option>
+
+      </select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <select matNativeControl placeholder="Genre" #genreId [(ngModel)]="selectedGenre"
+        (ngModelChange)="changeGenere()">
+        <option *ngFor="let genre of genresList" value="{{genre.id}}">{{genre.name}}</option>
+      </select>
+    </mat-form-field>
+
+
+  </div>
+</mat-dialog-content>
+<!-- </div> -->
+<mat-dialog-actions>
+
+
+  <app-s-dialog-cards style="min-height: 100vh; min-width: 95vw" [movieList]="movieObjArray"
+    [movieFilter]="movieFilterObj" [languageList]="languageList" [selectedLanguage]="selectedLanguage">
+  </app-s-dialog-cards>
+
+
+</mat-dialog-actions>

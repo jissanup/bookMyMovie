@@ -1,0 +1,111 @@
+.seat-book {
+  .container {
+    width: auto;
+  }
+
+  .wordWrap {
+    word-break: break-all;
+  }
+
+  .btn-book {
+    float: right;
+  }
+
+  .grid__DIV {
+    margin: 10px;
+  }
+
+  .check-log {
+    color: #000;
+  }
+
+  /* End CSS Helpers */
+  .title-header {
+    justify-content: space-between;
+
+    // Device = Low Resolution Tablets, Mobiles (Landscape)
+    @media (min-width: 481px) and (max-width: 767px) {
+      display: grid;
+    }
+
+    // Device = Most of the Smartphones Mobiles (Portrait)
+    @media (min-width: 320px) and (max-width: 480px) {
+      display: inline-grid;
+    }
+
+    // Device = Ipads (portrait- mobile)
+    @media (max-width: 768px) {
+      display: inline-grid;
+    }
+
+    .title-header__lbl {
+      font-weight: 600;
+    }
+  }
+
+  .space__hr {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  .innerContainer {
+    // color: #fff;
+    text-align: center;
+  }
+
+  .seat {
+    padding-right: 5px;
+  }
+
+  .legend {
+    font-size: 14px;
+  }
+
+  .legend > .padding-left {
+    padding-left: 15px;
+  }
+
+  .screen {
+    margin: 20px;
+
+    .screen-image__holder {
+      border-radius: 15px;
+      box-shadow: 0px 3px 6px #fff;
+
+      @media (min-width: 481px) and (max-width: 767px) {
+        width: 100%;
+      }
+
+      @media (min-width: 320px) and (max-width: 480px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .reservedSeat {
+    color: #ce4844;
+    cursor: pointer;
+  }
+
+  .selectedSeat {
+    color: #5cb85c;
+    cursor: pointer;
+  }
+
+  .freeSeat {
+    color: #333333;
+    cursor: pointer;
+  }
+
+  .rowSpan {
+    vertical-align: super;
+    padding-left: 15px;
+  }
+}
+
+.screen-img {
+  img {
+    width: 350px;
+    height: 250px;
+  }
+}

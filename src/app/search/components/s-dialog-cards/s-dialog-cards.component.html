@@ -1,0 +1,45 @@
+<div *ngFor="let movieObj of movieList" style="background-color: #D8D8D8">
+
+  <div fxLayout="column" fxLayoutAlign="center stretch" fxLayoutGap="5%">
+    <mat-card
+      *ngIf="selectedLanguage === movieObj.code && movieObj.value.length > 0"
+      #languageCard
+      class="search-title lang"
+      >{{ movieObj.key }}</mat-card
+    >
+  </div>
+  <div
+    *ngIf="selectedLanguage === movieObj.code && movieObj.value.length > 0"
+    fxLayout="row wrap"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10%"
+  >
+    <div *ngFor="let movie of (movieObj.value | sortMovie: userPreference | homeFilter: movieFilter:'')" class="list">
+      <mat-card class="item">
+        <div>
+          <img
+            class="card-image"
+            mat-card-image
+            src="https://image.tmdb.org/t/p/w300{{ movie.poster_path }}"
+            onerror="this.src='/assets/images/noImage.jpg'"
+            alt="Movie Poster"
+          />
+        </div>
+        <mat-card-header>
+          <mat-card-title title="{{ movie.original_title }}">{{ movie.original_title | slice: 0:21 }}</mat-card-title>
+          <mat-card-subtitle title=" {{ movie.overview }} ">{{ movie.overview | slice: 0:60 }}...</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <button
+            style="color:white; background-color: blue"
+            mat-raised-button
+            routerLink="/movie/nowPlaying/{{ movie.id }}"
+            [mat-dialog-close]="true"
+          >
+            Book Now
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

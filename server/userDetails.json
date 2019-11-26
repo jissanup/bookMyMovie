@@ -1,0 +1,149 @@
+{
+  "userDetails": {
+    "users": [
+      {
+        "uid": "101590852450539536978",
+        "name": "Punith Gowda N",
+        "image": "https://lh3.googleusercontent.com/a-/AAuE7mDVwHhauttwavwJycmv7PhK-GrdSwoCKLSytD21=s96-c",
+        "email": "hi@punith.me",
+        "role": "Admin",
+        "preferences": {
+          "lang": "en",
+          "generes": [],
+          "theaters": []
+        },
+        "ratings": {
+          "movieId": "",
+          "rating": ""
+        }
+      },
+      {
+        "uid": "112011073371985625063",
+        "name": "Punith N Gowda",
+        "image": "https://lh5.googleusercontent.com/-Qdhc-F8StnI/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reuBr3hmoKh0QhCkQVkGDafyxpxuA/s96-c/photo.jpg",
+        "email": "punithgowdanpg@gmail.com",
+        "role": "Admin",
+        "preferences": {
+          "lang": "en",
+          "generes": "28",
+          "theaters": "Kapali"
+        },
+        "ratings": {
+          "movieId": "",
+          "rating": ""
+        }
+      },
+      {
+        "uid": "111335428809802551386",
+        "name": "Jis Anup",
+        "image": "https://lh3.googleusercontent.com/a-/AAuE7mAsnMfZvzTwMiVyOZFMP8po6d2ds7DMJCS7ICtxZw=s96-c",
+        "email": "jissanup@gmail.com",
+        "role": "Admin",
+        "preferences": {
+          "lang": null,
+          "generes": null,
+          "theaters": null
+        },
+        "ratings": {
+          "movieId": "",
+          "rating": ""
+        }
+      }
+    ]
+  },
+  "theater": {
+    "theaters": [
+      {
+        "tid": "1",
+        "name": "Kapali",
+        "city": "Bangalore",
+        "gLocation": "test",
+        "capacity": 50,
+        "movies": [
+          366080
+        ]
+      },
+      {
+        "tid": "7",
+        "name": "yyy",
+        "city": "ff",
+        "gLocation": "yuu",
+        "capacity": 88
+      },
+      {
+        "tid": "6",
+        "name": "y",
+        "city": "yyu",
+        "gLocation": "78",
+        "capacity": 7
+      },
+      {
+        "tid": "8",
+        "name": "hh",
+        "city": "yyu",
+        "gLocation": "ytyt",
+        "capacity": 7
+      },
+      {
+        "tid": "44",
+        "name": "ss",
+        "city": "ss",
+        "gLocation": "ss",
+        "capacity": 44
+      }
+    ]
+  },
+  "appLogs": [
+    {
+      "id": 0.42636690616313855,
+      "component": "App",
+      "log": "Inside App.component.ts ngOnInit"
+    },
+    {
+      "id": 0.3900026551532403,
+      "component": "Admin Service - sccess",
+      "log": {
+        "theaters": [
+          {
+            "tid": "1",
+            "name": "Kapali",
+            "city": "Bangalore",
+            "gLocation": "test",
+            "capacity": 50,
+            "movies": [
+              366080
+            ]
+          },
+          {
+            "tid": "7",
+            "name": "yyy",
+            "city": "ff",
+            "gLocation": "yuu",
+            "capacity": 88
+          },
+          {
+            "tid": "6",
+            "name": "y",
+            "city": "yyu",
+            "gLocation": "78",
+            "capacity": 7
+          },
+          {
+            "tid": "8",
+            "name": "hh",
+            "city": "yyu",
+            "gLocation": "ytyt",
+            "capacity": 7
+          },
+          {
+            "tid": "44",
+            "name": "ss",
+            "city": "ss",
+            "gLocation": "ss",
+            "capacity": 44
+          }
+        ]
+      }
+    }
+  ]
+}

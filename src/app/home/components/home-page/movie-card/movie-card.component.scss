@@ -1,0 +1,132 @@
+.movieCard {
+  max-width: 270px;
+  max-height: 560px;
+  background-color: white;
+  color: black;
+  border-radius: 12px;
+}
+
+.goldColor {
+  color: goldenrod;
+}
+
+.header {
+  display: inline;
+  margin: 0px;
+}
+
+.dist {
+  float: right;
+  font-size: small;
+  font-weight: 200;
+  color: gray;
+}
+
+.castImage {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-left: 8%;
+}
+
+.marginLeft5px {
+  margin-left: 5px;
+}
+
+.bookHeading {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.forwardlink {
+  float: right;
+}
+
+.card-time a {
+  border: none;
+}
+
+.card-time {
+  color: #bdbdbd;
+}
+
+.mat-card-header .mat-card-title {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.mat-card-actions,
+.mat-card-content,
+.mat-card-subtitle {
+  margin-bottom: 6px;
+}
+
+.mat-card-image {
+  margin-bottom: 0px;
+}
+
+.mat-card-content,
+.mat-card-subtitle {
+  font-size: 11px;
+}
+
+.mat-card-image {
+  height: 300px;
+}
+
+.dateContainer {
+  width: 30%;
+}
+
+.selectContainer {
+  width: 100%;
+}
+
+img.mat-card-image {
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  margin-top: -16px;
+}
+
+.theaterList {
+  width: 60%;
+  margin-left: 10%;
+}
+
+.card-bookbutton-div {
+  padding: 0;
+}
+
+.hideOverflowText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.credits {
+  width: 300px;
+  height: 90px;
+  overflow: auto;
+}
+
+.toggleGroup {
+  height: 30px;
+  align-items: center;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+
+.rating {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.example-header-image {
+  position: absolute;
+  background-color: rgb(56, 146, 206);
+  margin-left: 230px;
+  border: 2px solid white;
+  color: white;
+}

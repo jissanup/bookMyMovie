@@ -1,0 +1,22 @@
+.search-filter-dropdowns {
+  margin-top: 0px 0px;
+  color: white;
+
+  mat-form-field,
+  .mat-input-element option {
+    margin-top: -10px;
+    font-size: 14px;
+  }
+}
+
+:host /deep/ .mat-select-value {
+  color: #fff !important;
+}
+
+:host /deep/.mat-form-field-label {
+  color: #fff;
+}
+
+.extraSpace {
+  flex: 1 1 auto;
+}

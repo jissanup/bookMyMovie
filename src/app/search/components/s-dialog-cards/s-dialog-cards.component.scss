@@ -1,0 +1,26 @@
+.item {
+  max-height: auto;
+  max-width: 350px;
+}
+
+// .search-title {
+//   width: 100%;
+// }
+
+.card-image {
+  max-height: 120px;
+  max-width: 80px;
+  float: right;
+  margin: 1px 1px 1px 1px;
+}
+
+mat-card {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.lang{
+  background-color:#2e2e2e; 
+  color: white;
+  width:70%;
+  margin: 10px auto;
+}

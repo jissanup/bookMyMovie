@@ -1,0 +1,24 @@
+<form fxLayout="column" fxLayoutAlign="center center" [formGroup]="newTheater">
+  <mat-form-field>
+    <input matInput placeholder="Theater ID" formControlName="tid" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Theater Name" formControlName="name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="City" formControlName="city">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="G-Location path" formControlName="gLocation">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="capacity" type="number" formControlName="capacity">
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Submit</button>
+</form>
+
+
+<ng-template #successDialog>
+  <div>New Theater added sucessfully </div>
+  <button mat-raised-button class="accept" color="primary" (click)="dialogOk()">OK</button>
+</ng-template>

@@ -1,0 +1,44 @@
+<div fxLayout="column" fxLayoutGap="1%" fxLayoutAlign="center center">
+  <div fxLayoutGap="3%" class="flex">
+    <mat-form-field>
+      <mat-select required [formControl]="selectTheater" placeholder="Select Theater">
+        <mat-option *ngFor="let theater of theaterList;trackBy:trackTheatre" [value]="theater">
+          {{theater.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Enter Movie Name" type="text" [formControl]="movieInput">
+    </mat-form-field>
+  </div>
+  <h4 *ngIf="nowShowing.length > 0">Now Playing in {{selectedTheater.name}}</h4>
+  <div *ngIf="nowShowing.length > 0" fxLayout="row" fxLayoutGap="3%">
+    <button mat-raised-button *ngFor="let movies of nowShowing;trackBy:trackMovie">
+      {{movies}}
+    </button>
+  </div>
+  <div fxLayout="row" fxLayoutGap="1%" *ngIf="nowShowing.length > 0" fxLayoutAlign="center center">
+    <button mat-raised-button color="primary" (click)="save()">
+      <mat-icon>save</mat-icon>
+    </button>
+    <button mat-raised-button color="warn" (click)="cancel()">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </div>
+  <div fxLayout="row wrap" fxLayoutGap="3%" fxLayoutAlign="center center">
+    <mat-card *ngFor="let movie of movieResult" class="cardContent">
+      <div fxLayout="row">
+        <mat-card-content>
+          <button mat-button (click)="addMovie(movie)">
+            {{movie.title}}
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-card-content>
+      </div>
+    </mat-card>
+  </div>
+</div>
+<ng-template #successDialog>
+  <div>New Movies added sucessfully </div>
+  <button mat-raised-button class="accept" color="primary" (click)="dialogOk()">OK</button>
+</ng-template>

@@ -1,0 +1,75 @@
+.grid-container {
+  background-color: #2d2d31;
+  color: white;
+}
+
+.grid-container {
+  .mat-h1 {
+    margin: 0;
+  }
+}
+
+.has-search .form-control-search {
+  padding-right: 10px;
+  color: #ccc;
+}
+
+.search-width {
+  width: 80%;
+}
+
+.user-button {
+  font-size: 35px;
+  margin-right: 10px;
+}
+
+.user-profile-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.header-search-box {
+  width: 100%;
+}
+
+mat-placeholder {
+  color: white;
+}
+
+.logo {
+  align-self: center;
+  height: 45px;
+  width: 140px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.extraSpace {
+  flex: 1 1 auto;
+}
+
+.searchContainer {
+  height: 35px;
+  width: 60%;
+  margin-top: 10px;
+
+  input {
+    height: 30px;
+    border-radius: 10px;
+    padding:5px;
+    border-color: #ff000000;
+  }
+}
+
+.app-navbar {
+  height: 50px;
+  background-color: rgb(56, 146, 206);
+  color: rgb(48, 48, 48);
+  width: 100%;
+}
+
+.profileImage {
+  width: 40px;
+  border-radius: 50%;
+}

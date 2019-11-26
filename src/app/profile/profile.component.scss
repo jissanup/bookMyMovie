@@ -1,0 +1,28 @@
+.profile-image {
+  margin-top: 10px;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.add-preference-dropdown form mat-form-field {
+  margin-left: 30px;
+}
+
+:host /deep/ .mat-select-value {
+  color: white;
+}
+
+:host /deep/ .mat-form-field-infix {
+  color: white;
+}
+
+:host /deep/.mat-form-field-label {
+  color: #fff;
+}
+
+.accept {
+  margin-left: 40%;
+  margin-top: 8%;
+}

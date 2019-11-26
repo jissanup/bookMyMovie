@@ -1,0 +1,112 @@
+.cards-container {
+  margin-top: 25px;
+  justify-content: space-around;
+  align-items: space-evenly;
+}
+
+.seach-movies-cards {
+  margin-bottom: 20px;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 80px;
+  font-size:12px;
+  background-color: #999;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  top: 3px;
+  right: 105%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.virtualScrollContainer {
+  height: 83vh;
+  overflow-x:hidden;
+}
+.scroll-top{
+  position: absolute;
+  bottom:20px;
+  right:25px;
+  z-index: 100000;
+  button{
+    font-size:30px;
+   cursor: pointer;
+  }
+}
+
+.mat-tab-label-active {
+  color: rgb(241, 246, 248);
+}
+
+.mat-tab-label-inactive {
+  color: rgb(248, 241, 241);
+}
+
+.dropDowns {
+  background-color: rgb(56, 146, 206);
+  height: 30px;
+  width: 100%;
+  position: fixed;
+}
+
+.tabsGroup {
+  margin-top: 35px;
+}
+
+.mat-tab-label,
+.mat-tab-link {
+  color: #fff;
+}
+
+app-movie-dropdowns {
+  width: 60%;
+}
+
+.filterMenu {
+  margin-top: 10px;
+}
+
+.mat-menu-content:not(:empty) {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: rgb(48, 48, 48);
+}
+
+.userOptions {
+  color: white;
+}
+
+.mat-menu-item {
+  color: white;
+}
+
+.filter {
+  margin-left: 80%;
+  background-color: rgb(48, 48, 48);
+}
+.sort{
+  position: absolute;
+  top:80px;
+  right:25px;
+  z-index: 100000;
+  button{
+    font-size:30px;
+   cursor: pointer;
+  }
+}

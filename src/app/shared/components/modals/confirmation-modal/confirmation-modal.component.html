@@ -1,0 +1,34 @@
+<h2 matDialogTitle>Confirmation Booking Successfully </h2>
+<hr>
+<mat-dialog-content>
+  <div class="print">
+    <i class="material-icons">outline-print </i>
+  </div><br>
+  <table style="width:100%">
+    <tr>
+      <td class="font_lbl">Movie</td>
+      <td>: {{data.name}}</td>
+    </tr>
+    <tr>
+      <td class="font_lbl">Theater</td>
+      <td>: {{data.theater}}</td>
+    </tr>
+    <tr>
+      <td class="font_lbl">Time</td>
+      <td>: {{data.time}}</td>
+    </tr>
+    <tr>
+      <td class="font_lbl">Seat Number</td>
+      <td>: {{data.seat}}</td>
+    </tr>
+    <tr>
+      <td class="font_lbl">Total Amount</td>
+      <td>: {{data.total}}</td>
+    </tr>
+  </table>
+</mat-dialog-content>
+<br>
+<hr>
+<mat-dialog-actions align="end">
+  <button mat-button color="primary" (click)="onCloseConfirm()">GOT IT,Ok</button>
+</mat-dialog-actions>

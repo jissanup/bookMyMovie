@@ -1,0 +1,36 @@
+:host /deep/ .mat-select-value {
+  color: #fff !important;
+}
+
+:host /deep/.mat-form-field-label {
+  color: #fff;
+}
+
+.accept {
+  margin-left: 40%;
+  margin-top: 8%;
+}
+.add-theatre{
+  width:50%;
+  margin:20px auto;
+  .mat-card-header-text{
+   margin: 0 auto;
+  }
+  mat-card{
+    text-align: center;
+  }
+  mat-form-field{
+    width:100%;
+  }
+}
+th, td{
+  border: 1px solid #fff;
+  padding:5px;
+  margin:0;
+}
+mat-form-field{
+  width:30%;
+}
+.invalid-feedback{
+  display: none;
+}

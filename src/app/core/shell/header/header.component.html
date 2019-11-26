@@ -1,0 +1,24 @@
+<div class="mat-elevation-z6 app-navbar" fxLayout="row">
+  <nav _ngcontent-c1>
+    <img routerLink="home" src="assets/images/logo.jpg" class="logo" alt="logo">
+  </nav>
+  <div class="extraSpace"></div>
+  <div fxLayout="column" class="searchContainer">
+    <input type="text" (click)="openSearchPage()" placeholder="Search.." label="Search">
+  </div>
+  <div class="extraSpace"></div>
+  <button mat-icon-button class="user-button" aria-label="Toggle menu" [matMenuTriggerFor]="user">
+    <span *ngIf="userDetails && userDetails.image !== null">
+    <img src="{{userDetails.image}}" class="profileImage" title="{{userDetails.name}}" onerror="this.src='/assets/download.png'" alt="User profile Pic" />
+  </span>
+  <span *ngIf="!userDetails || userDetails.image === null">
+    <i class="fa fa-user-circle" aria-hidden="true"></i>
+  </span>
+  </button>
+  <mat-menu #user="matMenu" xPosition="before">
+    <button *ngIf="!authFlag" mat-menu-item (click)="socialSignIn('google')">Sign in</button>
+    <button *ngIf="authFlag" mat-menu-item (click)="socialSignOut('google')">Sign out</button>
+    <button *ngIf="authFlag" mat-menu-item (click)="loadProfile()">Profile</button>
+    <button routerLink="admin" *ngIf="adminFlag" mat-menu-item>Admin</button>
+  </mat-menu>
+</div>

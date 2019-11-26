@@ -1,0 +1,55 @@
+<div fxLayout="column" fxLayoutGap="3%">
+  <div class="dropDowns">
+    <app-movie-dropdowns [languageList]="languageList" (languageChange$)="getLanguage($event)"
+      (genreChange$)="getGenre($event)" [layout]=" 'row' " fxHide.xs="true"></app-movie-dropdowns>
+    <button mat-button [matMenuTriggerFor]="filter" fxHide.xs="false" fxHide.gt-xs="true" class="filter" name="filter">
+      <mat-icon>filter_list</mat-icon>
+    </button>
+  </div>
+
+  <div>
+    <mat-tab-group (selectedIndexChange)="tabChanged($event)" class="tabsGroup">
+      <mat-tab label="Now Showing">
+        <ng-template matTabContent class="movieList">
+         <cdk-virtual-scroll-viewport itemSize="201" class="virtualScrollContainer" minBufferPx="1815" maxBufferPx="5445"
+        (scrolledIndexChange)="getMovies($event)" >
+            <div class="cards-container" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+              <ng-container 
+              *cdkVirtualFor="let movie of moviesList | sortPipe:sortMovie:'title' | homeFilter:selectedGenre:selectedLanguage;trackBy:trackMovie"  >
+              <app-movie-card class=" seach-movies-cards" [movie]="movie" [theaterList]="theaterList"
+                [category]="'nowPlaying'"> 
+              </app-movie-card>      
+            </ng-container>
+            </div>
+          </cdk-virtual-scroll-viewport>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Next Change" class="labelFont">
+        <ng-template matTabContent>
+          <cdk-virtual-scroll-viewport itemSize="20" class="virtualScrollContainer" 
+          minBufferPx="1815" maxBufferPx="5445" (scrolledIndexChange)="getMovies($event)">
+          <div class="cards-container" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+            <ng-container *ngFor="let movie of upcomingList | sortPipe:sortMovie:'title' | homeFilter:selectedGenre:selectedLanguage;trackBy:trackMovie">
+              <app-movie-card class="seach-movies-cards" [movie]="movie" [theaterList]="theaterList"
+                [category]="'upComing'"></app-movie-card>
+            </ng-container>
+          </div>
+          </cdk-virtual-scroll-viewport>
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+
+<mat-menu #filter="matMenu" xPosition="before">
+  <app-movie-dropdowns [languageList]="languageList" (languageChange$)="getLanguage($event)"
+    (genreChange$)="getGenre($event)" [layout]=" 'column' "></app-movie-dropdowns>
+</mat-menu>
+<div class="scroll-top tooltip" (click)="goTop()">
+  <button mat-mini-fab ><mat-icon>arrow_upward</mat-icon><span class="tooltiptext">Go to top</span></button>
+</div>
+<div class="sort tooltip" (click)="sort()">
+    <button mat-mini-fab><mat-icon *ngIf="sortClick; else down">keyboard_arrow_up</mat-icon>
+      <ng-template #down><mat-icon >keyboard_arrow_down</mat-icon></ng-template>
+      <span class="tooltiptext">Sort Movies</span></button>
+  </div>        

@@ -1,0 +1,62 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <h1> Payment</h1>
+  <form class="example-container" role="form">
+    <div>
+      <label>Card Holder's Name </label> &nbsp;&nbsp;
+      <mat-form-field>
+        <input matInput name="card-holder-name" id="card-holder-name">
+      </mat-form-field>
+    </div>
+    <div>
+      <label>Debit/Credit Card Number </label> &nbsp;&nbsp;
+      <mat-form-field>
+        <input matInput name="card-number" id="card-number" placeholder="">
+      </mat-form-field>
+    </div>
+    <div>
+      <label>Expiration Date </label> &nbsp;&nbsp;
+      <mat-form-field>
+        <mat-select>
+          <mat-option value="option">Month</mat-option>
+          <mat-option value="01">Jan (01)</mat-option>
+          <mat-option value="02">Feb (02)</mat-option>
+          <mat-option value="03">Mar (03)</mat-option>
+          <mat-option value="04">Apr (04)</mat-option>
+          <mat-option value="05">May (05)</mat-option>
+          <mat-option value="06">June (06)</mat-option>
+          <mat-option value="07">July (07)</mat-option>
+          <mat-option value="08">Aug (08)</mat-option>
+          <mat-option value="09">Sep (09)</mat-option>
+          <mat-option value="10">Oct (10)</mat-option>
+          <mat-option value="11">Nov (11)</mat-option>
+          <mat-option value="12">Dec (12)</mat-option>
+        </mat-select>
+      </mat-form-field> &nbsp;&nbsp;
+      <mat-form-field>
+        <mat-select required>
+          <mat-option value="13">2013</mat-option>
+          <mat-option value="14">2014</mat-option>
+          <mat-option value="15">2015</mat-option>
+          <mat-option value="16">2016</mat-option>
+          <mat-option value="17">2017</mat-option>
+          <mat-option value="18">2018</mat-option>
+          <mat-option value="19">2019</mat-option>
+          <mat-option value="20">2020</mat-option>
+          <mat-option value="21">2021</mat-option>
+          <mat-option value="22">2022</mat-option>
+          <mat-option value="23">2023</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <label>Card CVV </label> &nbsp;&nbsp;
+      <mat-form-field>
+        <input matInput name="cvv" id="cvv">
+      </mat-form-field>
+
+    </div>
+    <mat-button-toggle-group class="btn-width">
+      <mat-button-toggle (click)="openConfirmDialog()">Pay Now</mat-button-toggle>
+    </mat-button-toggle-group>
+  </form>
+</div>

@@ -1,0 +1,14 @@
+<div class="search-filter-dropdowns" fxLayout="{{layout}}" fxLayoutGap="2%" fxLayoutAlign="center">
+  <mat-form-field>
+    <mat-label *ngIf="!languageSelected">Language</mat-label>
+    <mat-select [formControl]="languageSelector">
+      <mat-option *ngFor="let language of languageList" value="{{language.id}}">{{language.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label *ngIf="!genreSelected">Genre</mat-label>
+    <mat-select [formControl]="generSelector">
+      <mat-option *ngFor="let genre of genresList" value="{{genre.id}}">{{genre.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

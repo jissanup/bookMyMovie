@@ -1,0 +1,42 @@
+<div>
+  <div fxLayout="column" fxLayoutAlign="center center" class="profile-image">
+    <img class="img-circle" src="{{userDetails.image}}" alt="user_image">
+  </div>
+  <div fxLayout="column" fxLayoutAlign="center center" class="profile-image">
+    <h3> Hello {{userDetails.name}} </h3>
+  </div>
+
+  <div class="add-preference-dropdown">
+    <form fxLayout="row wrap" fxLayoutAlign="center center" [formGroup]="newPreference">
+      <mat-form-field>
+        <mat-label>Language</mat-label>
+        <mat-select matNativeControl formControlName="lang">
+          <mat-option *ngFor="let language of languageList" value="{{language.value}}">{{language.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Genre</mat-label>
+        <mat-select matNativeControl formControlName="generes">
+          <mat-option *ngFor="let genre of genresList" value="{{genre.id}}">{{genre.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Theater</mat-label>
+        <mat-select matNativeControl formControlName="theaters">
+          <mat-option *ngFor="let theater of theaterList" value="{{theater.name}}">{{theater.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <button mat-raised-button color="primary" (click)="submitPreferences()">Submit</button>
+  </div>
+</div>
+
+<ng-template #successDialog>
+  <div>Your Preference are saved sucessfully </div>
+  <button mat-raised-button class="accept" color="primary" (click)="sucess()">OK</button>
+</ng-template>

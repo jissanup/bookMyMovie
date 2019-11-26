@@ -1,0 +1,14 @@
+<div class="container">
+  <mat-tab-group>
+    <mat-tab label="Add Movie">
+      <div class="admin-container">
+        <app-change-show [theaterList]="theaterList"></app-change-show>
+      </div>
+    </mat-tab>
+    <mat-tab label="Add Theatre">
+      <div class="admin-container">
+        <app-add-theater (addTheater)="addTheater($event)"></app-add-theater>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

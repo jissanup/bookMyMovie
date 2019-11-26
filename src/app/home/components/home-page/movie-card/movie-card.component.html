@@ -1,0 +1,57 @@
+<mat-card class="movieCard">
+  <span>
+    <div mat-card-avatar class="example-header-image" title="IMDB rating">
+      <h4 class="rating">{{ movie.vote_average * 10 }}%</h4>
+    </div>
+    <img mat-card-image src="{{ imagesPath }}{{ movie.poster_path }}" onerror="this.src='/assets/images/noImage.jpg';"
+      alt="poster image" />
+  </span>
+  <mat-card-header class="header">
+    <mat-card-title>
+      <div class="hideOverflowText" title="{{ movie.title }}">{{ movie.title }}</div>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="credits">
+      <ng-container *ngFor="let cast of (movie.casts | slice: 1:5); trackBy: trackCastandCrew">
+        <span>
+          <img src="{{ castCrewPath }}{{ cast.profile_path }}" class="castImage"
+            title="{{ cast.name }} / {{ cast.character }}" onerror="this.src='/assets/download.png'"
+            alt="cast profile photo" />
+        </span>
+      </ng-container>
+      <ng-container *ngFor="let crew of (movie.crews | slice: 1:5); trackBy: trackCastandCrew">
+        <span>
+          <img src="{{ castCrewPath }}{{ crew.profile_path }}" class="castImage"
+            title="{{ crew.name }} / {{ crew.job }}" onerror="this.src='/assets/download.png'"
+            alt="crew profile photo" />
+        </span>
+      </ng-container>
+    </div>
+    <hr />
+    <app-movie-booking>
+      <div class="theater-picker">
+        <mat-form-field class="dateContainer">
+          <input matInput [matDatepicker]="picker1" placeholder="Select Date" [min]="minDate" [formControl]="date" />
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="theaterList">
+          <mat-select required [formControl]="selectTheater">
+            <mat-option *ngFor="let theater of theaterList" [value]="theater"> {{ theater.name }} </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+    </app-movie-booking>
+  </mat-card-content>
+  <mat-card-actions class="card-bookbutton-div">
+    <button mat-raised-button color="primary" (click)="checKToDialog()" [disabled]="isInvalid()">
+      {{ category === 'nowPlaying' ? 'BOOK' : 'PRE-BOOK' }}
+    </button>
+    <a mat-button class="forwardlink" [routerLink]="['/movie', category, movie.id]"
+      routerLinkActive="router-link-active" name="movieDescriptionLink">
+      <mat-icon>arrow_forward</mat-icon>
+    </a>
+  </mat-card-actions>
+</mat-card>
