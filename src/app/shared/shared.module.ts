@@ -22,6 +22,8 @@ import { SortMoviePipe } from './pipes/sort-movie.pipe';
 import { HomeFilterPipe } from './pipes/home-filter.pipe';
 import { PreBookingComponent } from './components/modals/pre-booking/pre-booking.component';
 import { SortPipePipe } from './pipes/sort-pipe.pipe';
+import { LoggerService } from './services/logger.service';
+import { LogService } from './services/log.service';
 @NgModule({
   declarations: [
     MovieBookingComponent,
@@ -54,7 +56,7 @@ import { SortPipePipe } from './pipes/sort-pipe.pipe';
     SortPipePipe,
     PreBookingComponent
   ],
-  providers: [{ provide: MatDialogRef, useValue: {} }, { provide: MAT_DIALOG_DATA, useValue: [] }],
+  providers: [{ provide: MatDialogRef, useValue: {} }, { provide: MAT_DIALOG_DATA, useValue: [] }, LoggerService, LogService],
   entryComponents: [ConfirmationModalComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

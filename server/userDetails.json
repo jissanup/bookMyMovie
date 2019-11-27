@@ -90,60 +90,133 @@
         "city": "ss",
         "gLocation": "ss",
         "capacity": 44
+      },
+      {
+        "tid": "7",
+        "name": "hh",
+        "city": "dsds",
+        "gLocation": "trtr",
+        "capacity": 7
+      },
+      {
+        "tid": "6",
+        "name": "jis",
+        "city": "g",
+        "gLocation": "d",
+        "capacity": 77
+      },
+      {
+        "tid": "9",
+        "name": "g",
+        "city": "f",
+        "gLocation": "gg",
+        "capacity": 77
+      },
+      {
+        "tid": "5",
+        "name": "tt",
+        "city": "we",
+        "gLocation": "ty",
+        "capacity": 77
       }
     ]
   },
-  "appLogs": [
-    {
-      "id": 0.42636690616313855,
-      "component": "App",
-      "log": "Inside App.component.ts ngOnInit"
-    },
-    {
-      "id": 0.3900026551532403,
-      "component": "Admin Service - sccess",
-      "log": {
-        "theaters": [
-          {
-            "tid": "1",
-            "name": "Kapali",
-            "city": "Bangalore",
-            "gLocation": "test",
-            "capacity": 50,
-            "movies": [
-              366080
-            ]
-          },
-          {
-            "tid": "7",
-            "name": "yyy",
-            "city": "ff",
-            "gLocation": "yuu",
-            "capacity": 88
-          },
-          {
-            "tid": "6",
-            "name": "y",
-            "city": "yyu",
-            "gLocation": "78",
-            "capacity": 7
-          },
-          {
-            "tid": "8",
-            "name": "hh",
-            "city": "yyu",
-            "gLocation": "ytyt",
-            "capacity": 7
-          },
-          {
-            "tid": "44",
-            "name": "ss",
-            "city": "ss",
-            "gLocation": "ss",
-            "capacity": 44
-          }
-        ]
+  "appLogs": {
+    "logInformation": [
+      {
+        "entryDate": "2019-11-26T10:54:39.818Z",
+        "message": "scroll move to top",
+        "level": 2,
+        "extraInfo": [],
+        "logWithDate": true
+      },
+      {
+        "entryDate": "2019-11-27T11:46:45.164Z",
+        "message": "Language has been changed",
+        "level": 2,
+        "extraInfo": [
+          [
+            "language is",
+            "ja"
+          ]
+        ],
+        "logWithDate": true
+      },
+      {
+        "message": "Language has been selected",
+        "level": 2,
+        "extraInfo": [
+          [
+            "selected language is",
+            "zh"
+          ]
+        ],
+        "logWithDate": true
+      },
+      {
+        "message": "Language has been selected",
+        "level": 2,
+        "extraInfo": [
+          [
+            "selected language is",
+            "en"
+          ]
+        ],
+        "logWithDate": true
+      },
+      {
+        "entryDate": "2019-11-27T11:52:35.463Z",
+        "message": "Language has been selected",
+        "level": 2,
+        "extraInfo": [
+          [
+            "selected language is",
+            "ja"
+          ]
+        ],
+        "logWithDate": true
+      },
+      {
+        "entryDate": "2019-11-27T12:36:42.032Z",
+        "message": "added Theater Details",
+        "level": 2,
+        "extraInfo": [],
+        "logWithDate": true
+      },
+      {
+        "entryDate": "2019-11-27T12:38:40.633Z",
+        "message": "added Theater",
+        "level": 2,
+        "extraInfo": [
+          [
+            "jis"
+          ]
+        ],
+        "logWithDate": true
+      },
+      {
+        "entryDate": "2019-11-27T12:47:11.483Z",
+        "message": "added Theater",
+        "level": 2,
+        "extraInfo": [
+          [
+            "g"
+          ]
+        ],
+        "logWithDate": true
+      },
+      {
+        "entryDate": "2019-11-27T12:53:33.854Z",
+        "message": "added Theater",
+        "level": 2,
+        "extraInfo": [
+          [
+            "theater name: ",
+            "tt"
+          ]
+        ],
+        "logWithDate": true
       }
-    }
-  ]
+    ]
+  }
 }

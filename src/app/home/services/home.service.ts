@@ -58,13 +58,8 @@ export class HomeService {
       error => {
         console.error(error);
       } */
-    );
-  }
 
-  addLogs(log: any): void {
-    this.http.post(environment.JSONSERVER + JSON_SERVER_URLS.LOGGER_URL, log).subscribe(res => {
-      console.log('UPDATE LOGS :', res);
-    });
+    );
   }
 
   getGenres() {

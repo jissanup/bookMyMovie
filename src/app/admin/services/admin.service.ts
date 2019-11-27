@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular//common/http';
 import { TMDB_URLS, JSON_SERVER_URLS, BASE_URL } from '../../shared/config';
 import { environment } from '../../../environments/environment';
-import { HomeService } from 'src/app/home/services/home.service';
 const SEARCH_URL = BASE_URL.TMDB_API + TMDB_URLS.SEARCH_URL;
 const THEATERS_URL = environment.JSONSERVER + JSON_SERVER_URLS.THEATER_URL;
 
@@ -10,7 +9,7 @@ const THEATERS_URL = environment.JSONSERVER + JSON_SERVER_URLS.THEATER_URL;
 
 export class AdminService {
 
-  constructor(private http: HttpClient, private homeService: HomeService) { }
+  constructor(private http: HttpClient) { }
 
   newTheater(data) {
     let newTheaters, newObject;
@@ -21,11 +20,7 @@ export class AdminService {
       this.http.put(THEATERS_URL, newObject).subscribe((res) => {
       },
         (e) => {
-          this.homeService.addLogs({
-            id: Math.random(),
-            component: 'Admin Service - success',
-            log:JSON.stringify(e)
-          })
+         console.log(e);
         });
     },
       (e) => {

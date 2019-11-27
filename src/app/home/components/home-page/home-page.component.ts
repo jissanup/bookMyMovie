@@ -11,10 +11,10 @@ import {
   ChangeDetectorRef
 } from '@angular/core';
 
-import { HomeService } from '../../services/home.service';
 import { CdkVirtualScrollViewport, ScrollDispatcher } from '@angular/cdk/scrolling';
 import { Store } from '@ngrx/store';
 import * as MovieState from '../../../reducers/index';
+import { LogService } from '../../../shared/services/log.service';
 
 @Component({
   selector: 'app-home-page',
@@ -57,7 +57,7 @@ export class HomePageComponent implements OnInit, AfterViewInit {
   sortMovie = '';
   sortClick = false;
   languageList = [{ id: 'en', name: 'English' }, { id: 'ja', name: 'Japanese' }, { id: 'zh', name: 'Chinese' }];
-  constructor(private homeService: HomeService,
+  constructor(public logService: LogService,
     private store: Store<MovieState.State>) { }
 
   ngOnInit() {
@@ -76,6 +76,7 @@ export class HomePageComponent implements OnInit, AfterViewInit {
     }
   }
   goTop() {
+    this.logService.info('scroll to top');
     this.virtualScroll.scrollToIndex(0);
   }
   getMovies(): void {
@@ -100,10 +101,12 @@ export class HomePageComponent implements OnInit, AfterViewInit {
   }
 
   getLanguage(lang) {
+    this.logService.info('Language has been selected', ['selected language is', lang]);
     this.selectedLanguage = lang;
   }
 
   getGenre(g) {
+    this.logService.info('Genre has been selected', ['selected genre is', g]);
     this.selectedGenre = g;
   }
   ngAfterViewInit(): void {
